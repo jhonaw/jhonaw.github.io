@@ -1,20 +1,15 @@
 var imagens_src = ["./olho1.png", "./olho2.png", "./olho3.png", "./olho4.png"];
-var olho = document.createElement("img");
+var olho = document.querySelector("#olho");
 var body = document.querySelector("body");
-body.appendChild(olho);
-//olho.src = imagens_src[];
 var direcao = 0;
 
 
 async function trocaImagem() {
     if(direcao == 1) {
         abreOlho();
+	
     } else if( direcao == 0 ) {
-        if(olho.src == '') {
-            olho.src = imagens_src[0];
-        } else {
-            fechaOlho();
-        }
+        fechaOlho();
         
     }
         
@@ -60,12 +55,16 @@ function fechaOlho() {
     }
 
 }
-var animacao = setInterval(trocaImagem, 100);
 
-body.onclick = () => {
-    animacao = setInterval(trocaImagem, 100)
+var animacao;
+
+body.onclick = async () => {
+    animacao = await setInterval(trocaImagem, 100);
+    clearInterval(animacao);
 }
 
 olho.onclick = () => {
     clearInterval(animacao);
 }
+
+
