@@ -2,7 +2,8 @@ var imagens_src = ["./fecha.gif", "./abre.gif", "./aberto.gif", "./fechado.gif"]
 var olho1 = document.querySelector("#olho1");
 var olho2 = document.querySelector("#olho2");
 var body = document.querySelector("body");
-var direcao = 0;
+var direcao1 = 0;
+var direcao2 = 0;
 
 
 //async function trocaImagem() {
@@ -13,7 +14,7 @@ var direcao = 0;
             //direcao = 1;
        // } else if ( direcao == 1 ) {
             //setTimeout( () => { resolve(imagens_src[1]) }, 400 );
-            //console.log(direcao);
+            //console.log(direcao);//
             //direcao = 2;
             
         //} else if(direcao == 2){
@@ -27,45 +28,45 @@ var direcao = 0;
 //}
 
 async function fecha1() {
-    if( direcao == 0 ) {
+    if( direcao1 == 0 ) {
         
 	olho1.src = imagens_src[0];
-        await setTimeout( async () => { olho1.src = imagens_src[3];direcao = 1; console.log(direcao);}, 150 );
+        await setTimeout( async () => { olho1.src = imagens_src[3];direcao1 = 1; console.log(direcao1);}, 150 );
         await setTimeout( async () => { await abre1(); }, 600 )
         
     }
 }
 
 async function abre1() {
-    if( direcao == 1 ) {
+    if( direcao1 == 1 ) {
         
 	olho1.src = imagens_src[1];
-        await setTimeout( async () => { olho1.src = imagens_src[2]; direcao = 0; console.log(direcao);}, 150 );
+        await setTimeout( async () => { olho1.src = imagens_src[2]; direcao1 = 0; console.log(direcao1);}, 150 );
         
     }
 }
 
 async function fecha2() {
-    if( direcao == 0 ) {
+    if( direcao2 == 0 ) {
         
 	olho2.src = imagens_src[0];
-        await setTimeout( async () => { olho2.src = imagens_src[3];direcao = 1; console.log(direcao);}, 150 );
+        await setTimeout( async () => { olho2.src = imagens_src[3];direcao2 = 1; console.log(direcao2);}, 150 );
         await setTimeout( async () => { await abre2(); }, 600 )
         
     }
 }
 
 async function abre2() {
-    if( direcao == 1 ) {
+    if( direcao2 == 1 ) {
         
 	olho2.src = imagens_src[1];
-        await setTimeout( async () => { olho2.src = imagens_src[2]; direcao = 0; console.log(direcao);}, 150 );
+        await setTimeout( async () => { olho2.src = imagens_src[2]; direcao2 = 0; console.log(direcao2);}, 150 );
         
     }
 }
 
 
-var intervalo;
+//var intervalo;
 
 //async function executa() {
     //clearInterval(intervalo);
